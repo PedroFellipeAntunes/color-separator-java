@@ -1,0 +1,14 @@
+ColorSeparator/Operations.class
+ColorSeparator/ColorChannelSeparator.class
+FileManager/PngReader.class
+FileManager/Grayscale.class
+Util/Main.class
+ColorSeparator/Operations$Timeable.class
+Windows/DropDownWindow.class
+Windows/ImageViewerGrid$ImagePanel.class
+Windows/ImageViewerGrid.class
+Windows/DropDownWindow$1.class
+FileManager/PngSaver.class
+FileManager/PngConverter.class
+Windows/DropDownWindow$2.class
+ColorSeparator/TYPE.class
