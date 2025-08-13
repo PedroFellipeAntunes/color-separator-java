@@ -30,11 +30,13 @@ public class ColorChannelSeparator {
                 int green = (pixelColor >> 8) & 0xff;
                 int blue = pixelColor & 0xff;
                 
+                int newAlpha = alpha;
+                
                 if (invert) {
                     red = 255 - red;
                     green = 255 - green;
                     blue = 255 - blue;
-                    alpha = 255 - alpha;
+                    newAlpha = 255 - alpha;
                 }
                 
                 red = applyContrast(red, offset);
@@ -51,7 +53,8 @@ public class ColorChannelSeparator {
                 int bluePixel = colored ? ((alpha << 24) | blue) 
                                         : ((alpha << 24) | (blue << 16) | (blue << 8) | blue);
                 
-                int alphaPixel = (alpha << 24) | (alpha << 16) | (alpha << 8) | alpha;
+                //Always max alpha so it can be used as a transparency mask
+                int alphaPixel = (255 << 24) | (newAlpha << 16) | (newAlpha << 8) | newAlpha;
 
                 redChannel.setRGB(x, y, redPixel);
                 greenChannel.setRGB(x, y, greenPixel);
